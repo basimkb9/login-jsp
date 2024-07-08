@@ -5,25 +5,24 @@ import java.io.IOException;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-import com.dao.UserDAO;
-import com.modal.User;
+import com.dao.StudentDAO;
+import com.modal.Student;
 
 public class LoginServlet extends HttpServlet {
-//	https://met.guc.edu.eg/OnlineTutorials/JSP%20-%20Servlets/Full%20Login%20Example.aspx
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		User user = new User();
-		user.setUsername(username);
-		user.setPassword(password);
+		Student student = new Student();
+		student.setUsername(username);
+		student.setPassword(password);
 		
-		UserDAO userDao = new UserDAO();
+		StudentDAO studentDAO = new StudentDAO();
 		
-		if (userDao.authenticateUser(user)) {
+		if (studentDAO.authenticateUser(student)) {
 	            request.setAttribute("username", username);
-	            RequestDispatcher dispatcher = request.getRequestDispatcher("welcome.jsp");
+	            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
 	            dispatcher.forward(request, response);
 	    }
 		else {

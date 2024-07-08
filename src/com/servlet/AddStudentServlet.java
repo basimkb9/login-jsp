@@ -1,16 +1,16 @@
 package com.servlet;
 
 import java.io.IOException;
-import javax.servlet.*;
+
 import javax.servlet.http.*;
 
 import com.dao.StudentDAO;
 import com.modal.Student;
 
-public class RegistrationServlet extends HttpServlet {
-
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Student newStudent = new Student();
+public class AddStudentServlet extends HttpServlet {
+	
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		Student newStudent = new Student();
         
         newStudent.setFirstname(request.getParameter("firstname"));
         newStudent.setLastname(request.getParameter("lastname"));
@@ -21,11 +21,11 @@ public class RegistrationServlet extends HttpServlet {
         
         StudentDAO studentDAO = new StudentDAO();
         boolean registrationSuccess = studentDAO.addStudent(newStudent);
-        
+
         if (registrationSuccess) {
-            response.sendRedirect("registration.jsp?registration-success=true");
+            response.sendRedirect("add-student.jsp?add-student-success=true");
         } else {
-            response.sendRedirect("registration.jsp?registration-success=false");
+            response.sendRedirect("add-student.jsp?add-student-success=false");
         }
-    }
+	}
 }

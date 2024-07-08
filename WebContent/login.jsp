@@ -21,9 +21,11 @@
 		<input type="submit" value="login">
 	</form>
 	
+<!-- 
 	<form action="registration.jsp">
 		<p>Not a registered user? Sign up now!</p>
 		<input type="submit" value="register">
 	</form>
+-->
 </body>
 </html>

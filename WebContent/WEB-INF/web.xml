@@ -43,9 +43,52 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>registration</servlet-name>
-		<url-pattern>/register</url-pattern>
+		<url-pattern>/registration</url-pattern>
 	</servlet-mapping>
 	
+	<!-- View Student Servlet -->
+	<servlet>
+		<servlet-name>viewStudent</servlet-name>
+		<servlet-class>com.servlet.ViewStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>viewStudent</servlet-name>
+		<url-pattern>/view-students</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Add Student Servlet -->
+	<servlet>
+		<servlet-name>addStudent</servlet-name>
+		<servlet-class>com.servlet.AddStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>addStudent</servlet-name>
+		<url-pattern>/add-student</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Update Student Servlet -->
+	<servlet>
+		<servlet-name>update-student</servlet-name>
+		<servlet-class>com.servlet.UpdateStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>update-student</servlet-name>
+		<url-pattern>/update-student</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Delete Student Servlet -->
+	<servlet>
+		<servlet-name>delete-student</servlet-name>
+		<servlet-class>com.servlet.DeleteStudentServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>delete-student</servlet-name>
+		<url-pattern>/delete-student</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+
 	<welcome-file-list>  
    		<welcome-file>login.jsp</welcome-file>
   	</welcome-file-list>
